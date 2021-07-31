@@ -8,7 +8,7 @@ export default function Friend() {
     const handleDel = e => {
         e.preventDefault();
         if (window.confirm(`do you want to delete friend ${e.target.id}`)) {
-            axios.delete(`http://localhost:3001/del/${e.target.id}`).then(() => {
+            axios.delete(`https://mern-backend-js.herokuapp.com/del/${e.target.id}`).then(() => {
                 alert('friend deleted');
                 console.log('del');
             }).catch(e => {
@@ -19,7 +19,7 @@ export default function Friend() {
         }
     }
     useEffect(() => {
-        return axios.get('http://localhost:3001/get').then(res => setFriends(res.data));
+        return axios.get('https://mern-backend-js.herokuapp.com/get').then(res => setFriends(res.data));
     })
     return (
         <div className='d-flex flex-column w-100 justify-content-center align-items-center mt-4'>

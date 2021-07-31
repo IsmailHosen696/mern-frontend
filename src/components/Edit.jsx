@@ -11,7 +11,7 @@ export default function Edit() {
     const history = useHistory();
 
     useEffect(() => {
-        return axios.get(`http://localhost:3001/edit/${id}`).then(res => {
+        return axios.get(`https://mern-backend-js.herokuapp.com/edit/${id}`).then(res => {
             setName(res.data.name)
             setAge(res.data.age)
             setDescription(res.data.description)
@@ -20,7 +20,7 @@ export default function Edit() {
 
     const handleForm = async e => {
         e.preventDefault();
-        await axios.patch(`http://localhost:3001/patch/${id}`, { name, age, description }).then(() => { alert('updated'); history.push('/') }).catch(e => alert(e.message))
+        await axios.patch(`https://mern-backend-js.herokuapp.com/patch/${id}`, { name, age, description }).then(() => { alert('updated'); history.push('/') }).catch(e => alert(e.message))
     }
     return (
         <div className='d-flex flex-column'>

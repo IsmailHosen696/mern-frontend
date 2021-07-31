@@ -11,7 +11,7 @@ export default function AddFriend() {
     const handleForm = e => {
         e.preventDefault();
 
-        axios.post('http://localhost:3001/add', { name, age, description }).then(() => {
+        axios.post('https://mern-backend-js.herokuapp.com/add', { name, age, description }).then(() => {
             alert('added data');
             history.push('/');
         }).catch(e => {
